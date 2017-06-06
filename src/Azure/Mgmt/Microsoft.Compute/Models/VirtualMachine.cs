@@ -4,6 +4,9 @@ namespace Azure.Mgmt.Compute.Models
 {
     public class VirtualMachine : Resource
     {
-        public string BaseVMProperty { get; set; }
+        /// <summary>
+        /// Gets the disk provisioning state.
+        /// </summary>
+        public string ProvisioningState { get; protected set; }
     }
 }

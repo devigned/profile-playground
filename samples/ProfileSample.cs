@@ -6,14 +6,14 @@ public class ProfileSample {
         var vm = profile.Compute.VirtualMachines.Create();
 
         // Properties available on VM in the latest version of the APIs
-        var id = vm.ID;
-        var baseProp = vm.BaseVMProperty;
-        var prop2016_01_31 = vm.Prop2016_01_31;
-        // var prop2016_06_30 = vm.Prop2016_06_30; This version doesn't exist, so would cause a compile failure
+        var id = vm.Id;
+        var provisioningState = vm.ProvisioningState;
+        var licenseType = vm.LicenseType;
+        var name = vm.Name;
+        // var vmId = vm.VmId;  // doesn't exist in this profile
 
         var disk = profile.Compute.Disks.Create();
-        baseProp = disk.BaseDiskProperty;
-        // prop2016_01_31 = disk.Prop2016_01_31;  This version for disk doesn't exist, so this would cause a compile failure
-        var prop2016_06_30 = disk.Prop2016_06_30;
+        var diskSizeGB = disk.DiskSizeGB;
+        var ownerId = disk.OwnerId;
     }
 }
