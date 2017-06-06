@@ -5,7 +5,7 @@ public class ProfileSample {
         var profile = new Client();
         var vm = profile.Compute.VirtualMachines.Create();
 
-        // Properties available on VM in the latest version of the APIs
+        // Properties available on VM in the 2017_01_31 profile
         var id = vm.Id;
         var provisioningState = vm.ProvisioningState;
         var licenseType = vm.LicenseType;

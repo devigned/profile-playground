@@ -4,9 +4,8 @@ using Profile_2017_05_15=Azure.Mgmt.Profiles._2017_05_15;
 public class MultiProfileSample {
     public MultiProfileSample(){
         var profile_2017_01_31 = new Profile_2017_01_31.Client();
-        var vm = profile_2017_01_31.Compute.VirtualMachines.Create();
-
-        // Properties available on VM in the latest version of the APIs
+        // Properties available on VM in the 2017_01_31 profile
+        var vm = profile_2017_01_31.Compute.VirtualMachines.Create();        
         var id = vm.Id;
         var provisioningState = vm.ProvisioningState;
         var licenseType = vm.LicenseType;
@@ -16,8 +15,7 @@ public class MultiProfileSample {
 
         var profile_2017_05_15 = new Profile_2017_05_15.Client();
         var newerVM = profile_2017_05_15.Compute.VirtualMachines.Create();
-
-        // Properties available on VM in the latest version of the APIs
+        // // Properties available on VM in the 2017_05_15 profile
         id = newerVM.Id;
         provisioningState = newerVM.ProvisioningState;
         licenseType = newerVM.LicenseType;
