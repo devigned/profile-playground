@@ -8,5 +8,7 @@ namespace Azure.Mgmt.Compute._2016_01_31.Models {
         /// contain the Windows Server operating system.
         /// </summary>
         public string LicenseType { get; set; }
+
+        public new Plan Plan { get; set; }
     }
 }

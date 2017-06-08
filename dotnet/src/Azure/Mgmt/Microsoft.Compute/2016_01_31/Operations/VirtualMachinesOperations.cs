@@ -7,8 +7,11 @@ namespace Azure.Mgmt.Compute._2016_01_31.Operations {
 
         }
 
-        public VirtualMachine Create(){
-            return default(VirtualMachine);
+        public VirtualMachine Create(string licenseType, Plan plan){
+            return new VirtualMachine{ 
+                Plan = plan,
+                LicenseType = licenseType
+            };
         }
     }
 }

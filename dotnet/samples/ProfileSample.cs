@@ -3,7 +3,8 @@ using Azure.Mgmt.Profiles._2017_01_31;
 public class ProfileSample {
     public ProfileSample(){
         var profile = new Client();
-        var vm = profile.Compute.VirtualMachines.Create();
+        var plan = profile.Compute.Models.Plan("newPlan", "publisher", "promoCode");
+        var vm = profile.Compute.VirtualMachines.Create("blah", plan);
 
         // Properties available on VM in the 2017_01_31 profile
         var id = vm.Id;

@@ -9,6 +9,8 @@ namespace Azure.Mgmt.Compute._2016_06_30.Models
         /// is encoded and stored in all Azure IaaS VMs SMBIOS and can be read
         /// using platform BIOS commands.
         /// </summary>
-        public string VmId { get; protected set; }
+        public string VmId { get; set; }
+
+        public new Plan Plan { get; set; }
     }
 }

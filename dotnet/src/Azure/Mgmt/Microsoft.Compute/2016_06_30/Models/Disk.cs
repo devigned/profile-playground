@@ -15,6 +15,6 @@ namespace Azure.Mgmt.Compute._2016_06_30.Models {
         /// Gets a relative URI containing the VM id that has the disk
         /// attached.
         /// </summary>
-        public string OwnerId { get; protected set; }
+        public string OwnerId { get; set; }
     }
 }

@@ -1,7 +1,35 @@
 using System.Collections.Generic;
 
 namespace Azure.Mgmt.Models {
-    public class Resource {
+
+    public interface IResource {
+        /// <summary>
+        /// Gets resource Id
+        /// </summary>
+        string Id { get; }
+
+        /// <summary>
+        /// Gets resource name
+        /// </summary>
+        string Name { get; }
+
+        /// <summary>
+        /// Gets resource type
+        /// </summary>
+        string Type { get; }
+
+        /// <summary>
+        /// Gets or sets resource location
+        /// </summary>
+        string Location { get; set; }
+
+        /// <summary>
+        /// Gets or sets resource tags
+        /// </summary>
+        IDictionary<string, string> Tags { get; set; }
+    }
+
+    public abstract class Resource : IResource {
         /// <summary>
         /// Gets resource Id
         /// </summary>
