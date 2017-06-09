@@ -1,4 +1,4 @@
-require_relative "../src/azure/mgmt/profiles/2017_01_31/client"
+require "../src/azure/azure"
 
 puts "Profile 2017-01-31"
 profile_2017_01_31 = Azure::Mgmt::Profiles::Api_2017_01_31::Client.new

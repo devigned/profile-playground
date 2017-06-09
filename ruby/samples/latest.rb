@@ -1,4 +1,4 @@
-require "../src/azure/mgmt/profiles/latest/client"
+require "../src/azure/azure"
 
 latest_client = Azure::Mgmt::Profiles::Latest::Client.new
 

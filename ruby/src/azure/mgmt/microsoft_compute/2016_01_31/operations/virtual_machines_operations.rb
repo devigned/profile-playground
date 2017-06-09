@@ -5,12 +5,26 @@ module Azure
     module Compute
       module Api_2016_01_31
         module Operations
-          class VirtualMachinesOperations
-            def initialize(client)
+          module VirtualMachinesOperations
+            extend ActiveSupport::Concern
+
+            class Operations
+              attr_accessor :client
+
+              def initialize(client)
+                self.client = client
+              end
+
+              def create
+                # using a client create a VM and return it
+                Azure::Mgmt::Compute::Api_2016_01_31::Models::VirtualMachine.new
+              end
             end
 
-            def create
-              Azure::Mgmt::Compute::Api_2016_01_31::Models::VirtualMachine.new
+            included do
+              def virtual_machines
+                Operations.new(self)
+              end
             end
           end
         end
