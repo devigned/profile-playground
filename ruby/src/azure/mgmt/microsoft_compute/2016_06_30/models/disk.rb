@@ -1,4 +1,4 @@
-require_relative "../../../models/disk"
+require_relative "../../models/disk"
 
 
 module Azure
@@ -6,7 +6,6 @@ module Azure
     module Compute
       module Api_2016_06_30
         module Models
-
           class Disk < Azure::Mgmt::Compute::Models::Disk
             attr_accessor :disk_size_gb, :owner_id
 

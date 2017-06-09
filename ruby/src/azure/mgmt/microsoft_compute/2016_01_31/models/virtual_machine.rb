@@ -1,4 +1,4 @@
-require_relative "../../../models/virtual_machine"
+require_relative "../../models/virtual_machine"
 
 module Azure
   module Mgmt

@@ -1,5 +1,5 @@
-require_relative "../../microsoft_compute/2016_06_30/virtual_machines/operations/virtual_machines_operations"
-require_relative "../../microsoft_compute/2016_06_30/disks/operations/disks_operations"
+require_relative "../../microsoft_compute/2016_06_30/operations/virtual_machines_operations"
+require_relative "../../microsoft_compute/2016_06_30/operations/disks_operations"
 
 module Azure
   module Mgmt
