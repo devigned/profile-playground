@@ -2,8 +2,9 @@
 
 Azure Profiles provide a set of ARM **Resource Type, Version** combinations, which represent a long term supported set
 of APIs. That is to say, for a given Azure Profile, we may need to combine any set of resource types 
-(`Microsoft.Compute/VirtualMachine`, `Microsoft.Compute/Disk`, etc...) and ARM API versions. Valid sets would look
-like the following:
+(`Microsoft.Compute/VirtualMachine`, `Microsoft.Compute/Disk`, etc...) and ARM API versions. 
+
+Valid sets would look like the following:
 
 ```json
 {
