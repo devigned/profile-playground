@@ -12,7 +12,7 @@ namespace Azure.Mgmt.Profiles._2017_01_31
                 return new _2016_01_31.Models.VirtualMachine(name, location, tags, licenseType, plan);
             }
 
-            public _2016_01_31.Models.IPlan Plan(string name, string publisher = default(string), string product = default(string), string promotionCode = default(string))
+            public _2016_01_31.Models.IPlan Plan(string name, string publisher = default(string), string promotionCode = default(string))
             {
                 return new _2016_01_31.Models.Plan(name, promotionCode, publisher);
             }

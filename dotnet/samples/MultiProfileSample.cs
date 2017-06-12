@@ -6,7 +6,7 @@ public class MultiProfileSample {
         var olderAzure = new Profile_2017_01_31.Client();
         // Properties available on VM in the 2017_01_31 profile
 
-        var plan = olderAzure.Compute.Models.Plan(name: "planName", publisher: "publisher", product: "product", promotionCode: "code");
+        var plan = olderAzure.Compute.Models.Plan(name: "planName", publisher: "publisher", promotionCode: "code");
         var vm = olderAzure.Compute.VirtualMachines.Create(name: "myVm", location: "westus", licenseType: "MIT", plan: plan);
         var id = vm.Id;
         var provisioningState = vm.ProvisioningState;
@@ -28,5 +28,8 @@ public class MultiProfileSample {
 
         var newerVM = newerAzure.Compute.VirtualMachines.Create(name: "myVm", location: "westus", licenseType: "MIT", plan: newerPlan);
         var vmId = newerVM.VmId;
+
+
+        olderAzure.Compute.VirtualMachines.Create(name: "myVm", location: "westus", licenseType: "MIT", plan: newerPlan);
     }
 }

@@ -31,7 +31,7 @@ namespace Azure.Mgmt.Compute._2016_06_30.Models
 
         _2016_01_31.Models.IPlan _2016_01_31.Models.IVirtualMachine.Plan { 
             get { return Plan; } 
-            set { throw new NotImplementedException("Can project forward, only backward"); }
+            set { throw new NotImplementedException("Setting this property with an ealier version could be error prone."); }
         }
     }
 }
