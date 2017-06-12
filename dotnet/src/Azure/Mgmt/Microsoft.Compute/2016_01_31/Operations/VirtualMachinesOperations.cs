@@ -1,17 +1,15 @@
 using Azure.Mgmt.Models;
 using Azure.Mgmt.Compute._2016_01_31.Models;
+using System.Collections.Generic;
 
 namespace Azure.Mgmt.Compute._2016_01_31.Operations {
     public class VirtualMachinesOperations {
-        internal VirtualMachinesOperations(AzureClient client){
+        public VirtualMachinesOperations(AzureClient client){
 
         }
 
-        public VirtualMachine Create(string licenseType, Plan plan){
-            return new VirtualMachine{ 
-                Plan = plan,
-                LicenseType = licenseType
-            };
+        public IVirtualMachine Create(string name, string location, IDictionary<string, string> tags = null, string licenseType = null, IPlan plan=null){
+            return new VirtualMachine(name, location, tags, licenseType, plan);
         }
     }
 }

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using _2016_01_31 = Azure.Mgmt.Compute._2016_01_31;
 using _2016_06_30 = Azure.Mgmt.Compute._2016_06_30;
 
@@ -6,32 +7,19 @@ namespace Azure.Mgmt.Profiles._2017_01_31
     namespace Models {
         public class Factories
         {
-            public _2016_01_31.Models.VirtualMachine VirtualMachine(_2016_01_31.Models.Plan plan = default(_2016_01_31.Models.Plan), string licenseType = default(string))
+            public _2016_01_31.Models.IVirtualMachine VirtualMachine(string name, string location, IDictionary<string, string> tags = null, string licenseType = null, string vmId = null, _2016_01_31.Models.IPlan plan = null)
             {
-                return new _2016_01_31.Models.VirtualMachine
-                {
-                    Plan = plan,
-                    LicenseType = licenseType
-                };
+                return new _2016_01_31.Models.VirtualMachine(name, location, tags, licenseType, plan);
             }
 
-            public _2016_01_31.Models.Plan Plan(string name = default(string), string publisher = default(string), string promotionCode = default(string))
+            public _2016_01_31.Models.IPlan Plan(string name, string publisher = default(string), string product = default(string), string promotionCode = default(string))
             {
-                return new _2016_01_31.Models.Plan
-                {
-                    Name = name,
-                    Publisher = publisher,
-                    PromotionCode = promotionCode
-                };
+                return new _2016_01_31.Models.Plan(name, promotionCode, publisher);
             }
 
-            public _2016_06_30.Models.Disk Disk(int? diskSizeGB = default(int?), string ownerId = default(string))
+            public _2016_06_30.Models.IDisk Disk(string name, string location, IDictionary<string, string> tags = null, int? diskSizeGB = default(int?), string ownerId = default(string))
             {
-                return new _2016_06_30.Models.Disk
-                {
-                    DiskSizeGB = diskSizeGB,
-                    OwnerId = ownerId
-                };
+                return new _2016_06_30.Models.Disk(name, location, tags, diskSizeGB, ownerId);
             }
         }
     }

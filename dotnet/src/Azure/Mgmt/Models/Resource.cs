@@ -30,6 +30,13 @@ namespace Azure.Mgmt.Models {
     }
 
     public abstract class Resource : IResource {
+
+        public Resource(string name, string location, IDictionary<string, string> tags = null){
+            Name = name;
+            Location = location;
+            Tags = tags;
+        }
+
         /// <summary>
         /// Gets resource Id
         /// </summary>

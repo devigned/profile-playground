@@ -1,10 +1,11 @@
-using Azure.Mgmt.Profiles._2017_01_31;
+using Azure.Mgmt.Profiles._2017_05_15;
 
 public class ProfileSample {
     public ProfileSample(){
-        var profile = new Client();
-        var plan = profile.Compute.Models.Plan("newPlan", "publisher", "promoCode");
-        var vm = profile.Compute.VirtualMachines.Create("blah", plan);
+        // Working with the Azure Profile from 2017-01-31
+        var azure = new Client();
+        var plan = azure.Compute.Models.Plan(name: "planName", publisher: "publisher", product: "product", promotionCode: "code");
+        var vm = azure.Compute.VirtualMachines.Create(name: "myVm", location: "westus", vmId: "vm_id_doesnt_exist_in_earlier_versions", licenseType: "MIT", plan: plan);
 
         // Properties available on VM in the 2017_01_31 profile
         var id = vm.Id;
@@ -13,7 +14,7 @@ public class ProfileSample {
         var name = vm.Name;
         // var vmId = vm.VmId;  // doesn't exist in this profile
 
-        var disk = profile.Compute.Disks.Create();
+        var disk = azure.Compute.Disks.Create("myDisk", "westus", diskSizeGB: 80, ownerId: "ownerId");
         var diskSizeGB = disk.DiskSizeGB;
         var ownerId = disk.OwnerId;
     }

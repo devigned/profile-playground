@@ -1,7 +1,21 @@
 using Azure.Mgmt.Models;
+using Azure.Mgmt.Compute.Models;
+using System.Collections.Generic;
+using System;
 
 namespace Azure.Mgmt.Compute._2016_06_30.Models {
-    public class Disk : Azure.Mgmt.Compute.Models.Disk {
+
+    public interface IDisk : Azure.Mgmt.Compute.Models.IDisk {
+        int? DiskSizeGB { get; set; }
+        string OwnerId { get; set; }
+    }
+
+    public class Disk : Azure.Mgmt.Models.Resource, IDisk{
+        public Disk(string name, string location, IDictionary<string, string> tags = null, int? diskSizeGB = null, string ownerId = null) : base(name, location, tags){
+            DiskSizeGB = diskSizeGB;
+            OwnerId = ownerId;
+        }
+        
         /// <summary>
         /// Gets or sets if creationData.createOption is Empty, this field is
         /// mandatory and it indicates the size of the VHD to create. If this
@@ -16,5 +30,7 @@ namespace Azure.Mgmt.Compute._2016_06_30.Models {
         /// attached.
         /// </summary>
         public string OwnerId { get; set; }
+
+        public string ProvisioningState {get;}
     }
 }

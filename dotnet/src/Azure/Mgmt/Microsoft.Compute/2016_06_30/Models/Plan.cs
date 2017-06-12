@@ -1,28 +1,28 @@
+using Azure.Mgmt.Models;
+using Azure.Mgmt.Compute.Models;
+using Azure.Mgmt.Compute._2016_01_31.Models;
+using System.Collections.Generic;
 
-namespace Azure.Mgmt.Compute._2016_06_30.Models
-{
+namespace Azure.Mgmt.Compute._2016_06_30.Models {
+
+    public interface IPlan : Azure.Mgmt.Compute._2016_01_31.Models.IPlan {
+        string Product { get; set; }
+    }
+
     /// <summary>
     /// Plan for the resource.
     /// </summary>
-    public partial class Plan : Azure.Mgmt.Compute._2016_01_31.Models.Plan
+    public partial class Plan : IPlan
     {
-        /// <summary>
-        /// Initializes a new instance of the Plan class.
-        /// </summary>
-        public Plan() { }
-
-        /// <summary>
-        /// Initializes a new instance of the Plan class.
-        /// </summary>
-        /// <param name="product">The offer ID.</param>
-        public Plan(string product = default(string))
-        {
+        public Plan(string name, string promotionCode = null, string publisher = null, string product = null) {
             Product = product;
+            Publisher = publisher;
+            PromotionCode = promotionCode;
         }
 
-        /// <summary>
-        /// Gets or sets the offer ID.
-        /// </summary>
+        public string PromotionCode { get; set; }
+        public string Publisher { get; set; }
         public string Product { get; set; }
+        public string Name {get; set;}
     }
 }
