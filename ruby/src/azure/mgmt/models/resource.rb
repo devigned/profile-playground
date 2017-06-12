@@ -4,12 +4,12 @@ module Azure
       class Resource
         attr_accessor :id, :name, :type, :location, :tags
 
-        def initialize
-            self.id = "id inside of Azure::Mgmt::Models::Resource"
-            self.name = "name inside of Azure::Mgmt::Models::Resource"
-            self.type = "type inside of Azure::Mgmt::Models::Resource"
-            self.location = "location inside of Azure::Mgmt::Models::Resource"
-            self.tags = "tags inside of Azure::Mgmt::Models::Resource"
+        def initialize(name:, location:, tags:nil)
+            self.id = "id_from_resource"
+            self.name = name
+            self.type = "type_from_resource"
+            self.location = location
+            self.tags = tags
         end
       end
     end

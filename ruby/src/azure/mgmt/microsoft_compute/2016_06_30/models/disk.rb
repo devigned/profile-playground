@@ -9,10 +9,10 @@ module Azure
           class Disk < Azure::Mgmt::Compute::Models::Disk
             attr_accessor :disk_size_gb, :owner_id
 
-            def initialize
-              super
-              self.disk_size_gb = "disk_size_gb inside of Api_2016_06_30"
-              self.owner_id = "owner_id inside of Api_2016_06_30"
+            def initialize(name:, location:, tags: nil, disk_size_gb: nil, owner_id: nil)
+              super(name: name, location: location, tags: tags)
+              self.disk_size_gb = disk_size_gb
+              self.owner_id = owner_id
             end
           end
         end

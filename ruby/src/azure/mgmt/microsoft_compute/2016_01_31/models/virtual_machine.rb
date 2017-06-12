@@ -8,9 +8,9 @@ module Azure
           class VirtualMachine < Azure::Mgmt::Compute::Models::VirtualMachine
             attr_accessor :vm_id
 
-            def initialize
-              super
-              self.vm_id = "vm_id inside of Api_2016_01_31"
+            def initialize(name:, location:, tags: nil, vm_id: nil)
+              super(name: name, location: location, tags: tags)
+              self.vm_id = vm_id
             end
           end
         end

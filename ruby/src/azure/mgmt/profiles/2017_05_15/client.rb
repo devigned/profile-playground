@@ -6,10 +6,21 @@ module Azure
     module Profiles
       module Api_2017_05_15
         class Compute
-          attr_accessor :virtual_machines, :disks
+          attr_accessor :virtual_machines, :disks, :model_types
           def initialize(client)
             self.virtual_machines = Azure::Mgmt::Compute::Api_2016_06_30::Operations::VirtualMachinesOperations.new(client)
             self.disks = Azure::Mgmt::Compute::Api_2016_06_30::Operations::DisksOperations.new(client)
+            self.model_types = ModelTypes.new
+          end
+        end
+
+        class ModelTypes
+          def virtual_machine
+            Azure::Mgmt::Compute::Api_2016_06_30::Models::VirtualMachine
+          end
+
+          def disk
+            Azure::Mgmt::Compute::Api_2016_06_30::Models::Disk
           end
         end
 

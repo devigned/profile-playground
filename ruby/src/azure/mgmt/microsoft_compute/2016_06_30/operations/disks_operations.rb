@@ -9,8 +9,12 @@ module Azure
             def initialize(client)
             end
 
-            def create
-              Azure::Mgmt::Compute::Api_2016_06_30::Models::Disk.new
+            def create(name:, location:, tags: nil, disk_size_gb: nil, owner_id: nil)
+              Azure::Mgmt::Compute::Api_2016_06_30::Models::Disk.new(name: name,
+                                                                     location: location,
+                                                                     tags: tags,
+                                                                     disk_size_gb: disk_size_gb,
+                                                                     owner_id: owner_id)
             end
           end
         end
