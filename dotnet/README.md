@@ -5,22 +5,8 @@ Provide a prototype implementation of ARM Profiles in a statically typed languag
 ## Specific Goals of the Prototype
 - Provide a strongly typed model for Azure Profiles
 - Minimize developer pain when updating to newer versions of the client libraries
-- Provide an interface composition structure which provides flexibility of defining `Models` while giving backward
-  comparability via a shared hierarchy of interfaces.
 - Everything should be exposed via an interface to allow developers to mock the client easily 
   (not 100% done in the prototype)
-  
-## Model Interface Composition Hierarchy
-
-```
-Azure.Mgmt.Models.IResource
-<-- Azure.Mgmt.Compute.Models.IDisk
-<-- Azure.Mgmt.Compute._2016_01_31.Models.Disk
-<-- Azure.Mgmt.Compute._2016_06_30.Models.Disk
-```
-
-Each of the interfaces above builds off of the previous interface. Baring a breaking change of the interface of the
-model, this allows for backward comparability of the model without introducing inheritance.
 
 ## Profiles Expressed in Code
 Profile clients are the entry point to model instance constructors as well as strongly typed operations. Profiles
@@ -57,10 +43,6 @@ $ tree .
             │   │   └── Operations
             │   │       ├── DisksOperations.cs
             │   │       └── VirtualMachinesOperations.cs
-            │   └── Models
-            │       ├── Disk.cs
-            │       ├── Plan.cs
-            │       └── VirtualMachine.cs
             ├── Models
             │   └── Resource.cs
             └── Profiles
