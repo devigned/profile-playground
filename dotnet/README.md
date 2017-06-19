@@ -87,8 +87,13 @@ This sample provides an example using the `Latest` profile, a virtual profile wh
 API versions published. The API exposed by this version will be open to breaking changes due to always including the
 latest changes. This is only useful for developers that need to work with the latest version of Azure services.
 
-I think this is the second most common use case.
+I think `Latest Profile` is the second most common use case.
 
 #### [Multiple Profile Side by Side](./samples/MultiProfileSample.cs)
 This sample provides an example using two different Azure Profile versions side by side. This is likely to be the
 most common use case for anyone developing DevOps tools on top of Azure.
+
+#### [API Version Not In Any Profile](./samples/MultiProfileSample.cs)
+This sample creates a specific (resource type, Azure API version) request using an Azure client and a set of models and operations sourced from an API version specific namespace of Compute resources. This usage scenario is shown to illustrate a API consumer whom needs to access API versions which are not part of one of the curated Azure Profiles.
+
+I think `API Version Not In Any Profile` should be a rare use case which will be attempted by expert consumers. If we find this is not the case, then it would indicate we are not building Profiles to include desired Azure functionality.

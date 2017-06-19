@@ -5,13 +5,12 @@ public class SpecificVersionSample {
 
     public SpecificVersionSample(){
 
-        ///
-        // This sample creates a specific resource type, Azure API version request using 
-        // an Azure client and a API version specific namespace of Compute resources.
-        // 
-        // This usage scenario is shown to illustrate a API consumer whom needs to access
-        // API versions which are not part of one of the curated Azure Profiles.
-        ///
+        /* 
+        * This sample creates a specific (resource type, Azure API version) request using an Azure client and a set 
+        * of models and operations sourced from an API version specific namespace of Compute resources. 
+        * This usage scenario is shown to illustrate a API consumer whom needs to access API versions which are 
+        * not part of one of the curated Azure Profiles.
+        */
 
         var client = new Client();
         var vmOperations = new specificCompute.Operations.VirtualMachinesOperations(client);
