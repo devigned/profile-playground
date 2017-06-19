@@ -1,12 +1,12 @@
 using Azure.Mgmt.Models;
-using Azure.Mgmt.Compute.Models;
 using System.Collections.Generic;
 using System;
 
 namespace Azure.Mgmt.Compute._2016_01_31.Models {
-    public interface IVirtualMachine : Azure.Mgmt.Compute.Models.IVirtualMachine {
+    public interface IVirtualMachine : IResource {
         string LicenseType { get; set; }
         IPlan Plan { get; set; }
+        string ProvisioningState { get; }
     }
     public class VirtualMachine : Azure.Mgmt.Models.Resource, IVirtualMachine {
 

@@ -5,9 +5,11 @@ using Azure.Mgmt.Models;
 
 namespace Azure.Mgmt.Compute._2016_06_30.Models
 {
-    public interface IVirtualMachine : Azure.Mgmt.Compute._2016_01_31.Models.IVirtualMachine {
+    public interface IVirtualMachine : IResource {
         string VmId { get; set; }
-        new IPlan Plan {get; set; }
+        IPlan Plan {get; set; }
+        string LicenseType { get; set; }
+        string ProvisioningState { get; }
     }
     public class VirtualMachine : Azure.Mgmt.Models.Resource, IVirtualMachine
     {
@@ -28,10 +30,5 @@ namespace Azure.Mgmt.Compute._2016_06_30.Models
         public IPlan Plan { get; set; }
         public string LicenseType { get; set; }
         public string ProvisioningState {get;}
-
-        _2016_01_31.Models.IPlan _2016_01_31.Models.IVirtualMachine.Plan { 
-            get { return Plan; } 
-            set { throw new NotImplementedException("Setting this property with an ealier version could be error prone."); }
-        }
     }
 }

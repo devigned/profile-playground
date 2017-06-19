@@ -1,12 +1,14 @@
 using Azure.Mgmt.Models;
-using Azure.Mgmt.Compute.Models;
 using Azure.Mgmt.Compute._2016_01_31.Models;
 using System.Collections.Generic;
 
 namespace Azure.Mgmt.Compute._2016_06_30.Models {
 
-    public interface IPlan : Azure.Mgmt.Compute._2016_01_31.Models.IPlan {
+    public interface IPlan {
         string Product { get; set; }
+        string PromotionCode { get; set; }
+        string Publisher {get; set;}
+        string Name {get; set;}
     }
 
     /// <summary>

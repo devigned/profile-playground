@@ -1,13 +1,13 @@
 using Azure.Mgmt.Models;
-using Azure.Mgmt.Compute.Models;
 using System.Collections.Generic;
 using System;
 
 namespace Azure.Mgmt.Compute._2016_06_30.Models {
 
-    public interface IDisk : Azure.Mgmt.Compute.Models.IDisk {
+    public interface IDisk : IResource {
         int? DiskSizeGB { get; set; }
         string OwnerId { get; set; }
+        string ProvisioningState { get; }
     }
 
     public class Disk : Azure.Mgmt.Models.Resource, IDisk{
