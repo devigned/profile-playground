@@ -1,6 +1,0 @@
-{
-    "resourceTypeVersions": {
-        "Microsoft.Compute/VirtualMachine": "2016_01_31",
-        "Microsoft.Compute/Disk": "2016_06_30"
-    }
-}
