@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard1.4</TargetFramework>
+    <RootNamespace>Microsoft.Azure.Compute</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Microsoft.Azure.Compute._2016_06_30\Microsoft.Azure.Compute._2016_06_30.csproj" />
+  </ItemGroup>
+
+</Project>
